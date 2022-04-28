@@ -1,7 +1,7 @@
 from faker import Faker
 from app.models import Entry, db
 
-def generate_entries(how_many=10):
+def generate_entries(how_many):
    fake = Faker()
 
    for i in range(how_many):
@@ -10,7 +10,8 @@ def generate_entries(how_many=10):
            body='\n'.join(fake.paragraphs(15)),
            is_published=True
        )
-   print(post(i))
-     #  db.session.add(post)
-     #  db.session.commit()
    
+       db.session.add(post)
+   db.session.commit()
+generate_entries(10)
+print(generate_entries)

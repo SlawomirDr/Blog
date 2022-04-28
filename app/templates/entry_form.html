@@ -2,7 +2,7 @@
 
 {% block content %}
 <h3>
-   Dodaj nowy wpis
+   Dodaj nowy wpis lub edytuj stary
 </h3>
 
 <form action="" method="POST">
@@ -19,7 +19,13 @@
        {{ form.is_published(class_="form-check-input") }}
        <label class="form-check-label" for="is_published">Wpis opublikowany</label>
    </div>
+   
    <button type="submit" class="btn btn-primary mt-5">Zapisz</button>
+
+   <div>   
+    <a href="/" class="btn btn-primary mt-5" type="submit">Powrot do strony głównej</a> 
+   </div>
+   
 </form>
 
 {% endblock %}
