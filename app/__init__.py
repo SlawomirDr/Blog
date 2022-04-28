@@ -9,3 +9,10 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app import routes, models
+
+def make_shell_context():
+  return {
+      "db": db,
+      "Entry": models.Entry
+  }
+  
